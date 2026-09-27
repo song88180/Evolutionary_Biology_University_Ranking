@@ -1,0 +1,12 @@
+journal,jif_data_year,jcr_release_year,impact_factor,verification_status,source_url,notes
+Nature,2025,2026,56.1,publisher_reported,https://www.nature.com/nature-portfolio/about-journals/journal-metrics,Two-year Journal Impact Factor
+Science,2025,2026,47.3,distributor_reported,https://www.wolterskluwer.com/en/solutions/ovid/science-1250,Ovid explicitly attributes the 2025 figure to Journal Citation Reports
+Cell,2025,2026,45.1,secondary_corroborated,https://fiber.shinshu-u.ac.jp/hochi/impactfactor.html,Publisher page blocked; university-hosted table explicitly labels IF 2025; not yet verified against publisher or JCR export
+Nature Ecology & Evolution,2025,2026,17.1,publisher_reported,https://www.nature.com/nature-portfolio/about-journals/journal-metrics,Two-year Journal Impact Factor
+Nature Genetics,2025,2026,25.5,publisher_reported,https://www.nature.com/nature-portfolio/about-journals/journal-metrics,Two-year Journal Impact Factor
+Nature Human Behaviour,2025,2026,17.5,publisher_reported,https://www.nature.com/nature-portfolio/about-journals/journal-metrics,Correct publisher spelling of Nature Human Behavior in README
+Proceedings of the National Academy of Sciences,2025,2026,9.5,secondary_corroborated,https://fiber.shinshu-u.ac.jp/hochi/impactfactor.html,Publisher metrics inaccessible; university-hosted table explicitly labels IF 2025; not yet verified against publisher or JCR export
+Science Advances,2025,2026,13.9,distributor_reported,https://www.wolterskluwer.com/en/solutions/ovid/science-advances-15526,Ovid explicitly attributes the 2025 figure to Journal Citation Reports
+Nature Communications,2025,2026,18.1,publisher_reported,https://www.nature.com/nature-portfolio/about-journals/journal-metrics,Two-year Journal Impact Factor
+Current Biology,2025,2026,7.7,secondary_corroborated,https://portalcientifico.upm.es/en/ipublic/source/11178,Publisher page blocked; university research portal explicitly labels 2025 IF_WoS 7.7; publisher or JCR confirmation still pending
+Molecular Biology and Evolution,2025,2026,6.4,publisher_reported,https://academic.oup.com/mbe,Homepage explicitly labels 2025 Impact Factor

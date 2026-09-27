@@ -1,0 +1,9 @@
+{
+  "ranking_page": "https://www.shanghairanking.com/rankings/arwu/2026",
+  "payload_url": "https://www.shanghairanking.com/_nuxt/static/1790146108/rankings/arwu/2026/payload.js",
+  "extraction_time_utc": "2026-09-24T03:04:47.711Z",
+  "payload_sha256": "ea8c1e4e3a9928282b0143aa208f81281fe9c6e563cfaffedb373e072eda140c",
+  "institution_count": 1000,
+  "purpose": "Eligibility pool only. ARWU rank and score are not bibliometric ranking inputs.",
+  "publication_audit_status": "Not started; pool extraction does not establish publication coverage."
+}

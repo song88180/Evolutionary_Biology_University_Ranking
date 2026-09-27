@@ -1,0 +1,21 @@
+{
+  "publication_start": "2025-09-24",
+  "publication_end": "2026-09-24",
+  "eligible_institutions": 1000,
+  "included_papers": 2378,
+  "fully_allocated_papers": 2378,
+  "fallback_papers_included": 347,
+  "top100_rows_including_cutoff_ties": 100,
+  "unresolved_scientific_reviews": 0,
+  "final_ranking_ready": false,
+  "arithmetic_checks_passed": true,
+  "limitations": [
+    "Scientific screening and primary access/eligibility review remain incomplete.",
+    "Missing institutions and papers are not zero research output; rankings can change substantially.",
+    "OpenAlex correspondence fallback is database-derived and not publisher-confirmed.",
+    "Papers with incomplete institutional denominators receive no scores until resolved.",
+    "Outside-pool institutions retain shares; those shares are not redistributed.",
+    "Some JIF values await primary-source confirmation; consult journal_impact_factors.csv.",
+    "Publication and indexing delays prevent a claim of exhaustive coverage."
+  ]
+}

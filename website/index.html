@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#102c28">
+  <meta name="description" content="Final 2026 ranking of evolutionary biology research at the world's top universities, scored by fractional journal impact factor credit.">
+  <title>Evolutionary Biology University Ranking 2026</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="assets/ranking-data.js" defer></script>
+  <script src="assets/paper-data.js" defer></script>
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="#top" aria-label="Evolutionary Biology Ranking home"><span class="brand-mark" aria-hidden="true">E<span>•</span>B</span><span class="brand-label">Evolutionary<br>Biology Ranking</span></a>
+    <div class="header-actions"><nav aria-label="Main navigation"><a href="#ranking">Ranking</a><a href="#papers">Papers</a><a href="#method">Methodology</a><a href="#data">Data</a></nav><button type="button" id="language-toggle" class="language-toggle" aria-label="Switch to Chinese">中文</button></div>
+  </header>
+
+  <main id="top">
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero-copy">
+        <p class="eyebrow"><span class="live-dot"></span> Final ranking · 2026 edition</p>
+        <h1 id="hero-title">Where evolution<br><em>is being studied.</em></h1>
+        <p class="hero-intro">A focused, paper-by-paper ranking of evolutionary biology research across the ARWU top 1,000 universities.</p>
+        <div class="hero-actions"><a class="button button-primary" href="#ranking">Explore the top 100 <span aria-hidden="true">↗</span></a><a class="text-link" href="#method">How scores work <span aria-hidden="true">↓</span></a></div>
+        <p class="date-line">Publication window <strong>24 Sep 2025 — 24 Sep 2026</strong></p>
+      </div>
+      <div class="hero-art" aria-hidden="true"><div class="orbit orbit-one"></div><div class="orbit orbit-two"></div><div class="orbit orbit-three"></div><div class="orbit-center">100<span>universities</span></div><span class="orbit-dot dot-one"></span><span class="orbit-dot dot-two"></span><span class="orbit-dot dot-three"></span><span class="orbit-dot dot-four"></span></div>
+    </section>
+
+    <section class="facts" aria-label="Ranking at a glance">
+      <div><span class="fact-number">100</span><span class="fact-label">ranked universities</span></div>
+      <div><span class="fact-number">2,378</span><span class="fact-label">qualifying papers</span></div>
+      <div><span class="fact-number">11</span><span class="fact-label">research journals</span></div>
+      <div><span class="fact-number">1 year</span><span class="fact-label">publication window</span></div>
+    </section>
+
+    <section class="ranking-section" id="ranking" aria-labelledby="ranking-title">
+      <div class="section-heading"><div><p class="eyebrow dark">The results</p><h2 id="ranking-title">Explore the results</h2><p class="section-intro">Browse the top 100 universities or all 2,378 evolutionary biology papers included in the analysis.</p></div></div>
+      <div class="result-tabs" role="tablist" aria-label="Results view"><button type="button" id="universities-tab" role="tab" aria-selected="true" aria-controls="universities-panel">Universities <span>100</span></button><button type="button" id="papers-tab" role="tab" aria-selected="false" aria-controls="papers" tabindex="-1">Included papers <span>2,378</span></button></div>
+      <div id="universities-panel" role="tabpanel" aria-labelledby="universities-tab"><div class="panel-intro"><p>Ranked by total fractional journal impact factor credit. Select a university to see every contributing paper.</p><a class="download-link" href="assets/ranking.csv" download>Download ranking CSV <span aria-hidden="true">↘</span></a></div>
+        <div class="table-tools"><label class="search-box"><svg viewBox="0 0 24 24" width="19" height="19" aria-hidden="true"><circle cx="10.8" cy="10.8" r="6.5"></circle><path class="search-handle" d="m16 16 5 5"></path></svg><span class="sr-only">Search universities</span><input id="search" type="search" placeholder="Search universities…" autocomplete="off"></label><span id="result-count" class="result-count" aria-live="polite">Showing 100 universities</span></div>
+        <div class="table-scroll"><table><thead><tr><th scope="col">Rank</th><th scope="col">University</th><th scope="col" class="numeric">Score</th><th scope="col" class="numeric">Papers</th><th scope="col" class="numeric breakdown">Full / Fractional</th><th scope="col"><span class="sr-only">Details</span></th></tr></thead><tbody id="ranking-body"></tbody></table></div>
+        <p class="table-note">Scores are sums of 2025 journal impact factors, divided equally among each paper's distinct corresponding-author institutions. Numbers shown to two decimals; ranking uses unrounded scores.</p>
+      </div>
+      <div id="papers" role="tabpanel" aria-labelledby="papers-tab" hidden><div class="panel-intro"><p>Every qualifying paper in the final dataset, including papers that do not contribute to a top-100 university's score.</p><a class="download-link" href="assets/included-papers.csv" download>Download all papers CSV <span aria-hidden="true">↘</span></a></div>
+        <div class="paper-browser-tools"><label class="search-box"><svg viewBox="0 0 24 24" width="19" height="19" aria-hidden="true"><circle cx="10.8" cy="10.8" r="6.5"></circle><path d="m16 16 5 5"></path></svg><span class="sr-only">Search all papers</span><input id="all-paper-search" type="search" placeholder="Search title, author, or DOI…" autocomplete="off"></label><label class="journal-filter-label"><span class="sr-only">Filter by journal</span><select id="journal-filter"><option value="">All journals</option></select></label><span id="all-paper-count" class="result-count" aria-live="polite"></span></div>
+        <div id="all-paper-list" class="all-paper-list"></div><button type="button" id="load-more-papers" class="button load-more">Show more papers ↓</button>
+      </div>
+    </section>
+
+    <section class="method-section" id="method" aria-labelledby="method-title">
+      <div class="method-lead"><p class="eyebrow light">The methodology</p><h2 id="method-title">One paper.<br>One clear rule.</h2><p>Only original research with evolution as a major scientific question or conclusion is counted. Articles must have first appeared online in one of the 11 selected journals during the publication window.</p><a href="assets/paper-contributions.csv" class="button button-outline" download>Download all paper contributions <span aria-hidden="true">↘</span></a></div>
+      <div class="method-steps"><div class="method-step"><span class="step-number">01</span><div><h3>Weight the paper</h3><p>Each qualifying paper starts with its journal's <strong>2025 impact factor</strong>. No citation counts, reputation measures, or university-size adjustment are used.</p></div></div><div class="method-step"><span class="step-number">02</span><div><h3>Split the credit</h3><p>Divide that weight equally among all <strong>distinct corresponding-author institutions</strong>. Multiple corresponding authors at the same institution count once. Non-corresponding affiliations receive nothing.</p></div></div><div class="method-step"><span class="step-number">03</span><div><h3>Rank the universities</h3><p>Add each institution's shares, then rank only universities in the <strong>ARWU 2026 top 1,000</strong>. Institutions outside that pool keep their shares; their points are never reassigned.</p></div></div></div>
+    </section>
+
+    <section class="journal-section" id="data" aria-labelledby="journals-title"><div class="section-heading"><div><p class="eyebrow dark">The source set</p><h2 id="journals-title">Journal weights</h2><p class="section-intro">The same 2025 journal impact factor is used for every qualifying paper in a journal.</p></div></div><div id="journal-grid" class="journal-grid"></div><p class="source-note">This site presents the project owner's final ranking of the reviewed dataset. Correspondence for 347 of 2,378 papers uses explicitly marked OpenAlex author information; the remainder uses publisher or repository evidence. All paper-level credits are available above for independent inspection.</p></section>
+  </main>
+
+  <footer><span class="footer-brand">E<span>•</span>B</span><p>Evolutionary Biology University Ranking · 2026</p><a href="#top">Back to top ↑</a></footer>
+
+  <dialog id="paper-dialog" aria-labelledby="dialog-title"><div class="dialog-header"><div><p class="eyebrow dark" id="dialog-rank"></p><h2 id="dialog-title"></h2><p id="dialog-summary"></p></div><button id="dialog-close" class="close-button" aria-label="Close paper details">×</button></div><div class="dialog-tools"><label class="search-box"><svg viewBox="0 0 24 24" width="19" height="19" aria-hidden="true"><circle cx="10.8" cy="10.8" r="6.5"></circle><path d="m16 16 5 5"></path></svg><span class="sr-only">Search contributing papers</span><input id="paper-search" type="search" placeholder="Search titles, journals, or DOIs…"></label><span id="paper-count" class="result-count"></span></div><div id="paper-list" class="paper-list"></div></dialog>
+</body>
+</html>

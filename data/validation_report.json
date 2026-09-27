@@ -1,0 +1,59 @@
+{
+  "validated_utc": "2026-09-27T08:04:55.966667+00:00",
+  "publication_start": "2025-09-24",
+  "publication_end": "2026-09-24",
+  "consistency_checks_passed": true,
+  "scientific_completeness_certified": false,
+  "final_ranking_ready": false,
+  "arwu_eligible_institutions": 1000,
+  "metadata_queries_count_matched": 33,
+  "included_papers": 2031,
+  "included_papers_by_journal": {
+    "Cell": 19,
+    "Current Biology": 32,
+    "Molecular Biology and Evolution": 289,
+    "Nature": 142,
+    "Nature Communications": 795,
+    "Nature Ecology & Evolution": 67,
+    "Nature Genetics": 29,
+    "Nature Human Behaviour": 7,
+    "Proceedings of the National Academy of Sciences": 393,
+    "Science": 33,
+    "Science Advances": 225
+  },
+  "fully_allocated_papers": 2031,
+  "credit_rows": 4113,
+  "outside_pool_credit_rows": 1608,
+  "unresolved_affiliation_rows": 0,
+  "screening_status_counts": {
+    "excluded_relevance_after_review": 22755,
+    "excluded_nonoriginal_database_type": 2925,
+    "included_in_reviewed_subset": 2031,
+    "evolutionary_relevance_confirmed_primary_evidence_pending": 347,
+    "excluded_nonoriginal_after_review": 1221,
+    "duplicate_source_record": 137,
+    "excluded_publisher_date_outside_window": 45,
+    "excluded_nonoriginal_publisher_type": 2778,
+    "excluded_nonarticle_research_object": 8
+  },
+  "primary_metadata_extraction_status_counts": {
+    "explicit_repository_links_parsed": 1655,
+    "explicit_publisher_links_parsed": 4342,
+    "publisher_type_metadata_parsed": 40,
+    "repository_links_need_review": 3,
+    "failed": 1
+  },
+  "date_evidence_counts": {
+    "repository_publication_date_of_online_only_journal": 298,
+    "publisher_deposited_online_date_via_crossref": 473,
+    "publisher_electronic_article_date_in_pubmed": 233,
+    "repository_explicit_electronic_publication_date": 718,
+    "publisher_explicit_published_date": 16,
+    "online_date_unresolved": 3,
+    "publisher_deposited_online_date_via_crossref (Crossref 'created' deposit timestamp; JATS/PubMed lack an explicit electronic ArticleDate. Corroborated by Crossref's own month-only 'published' field and Europe PMC firstPublicationDate agreeing on the same month, well inside the confirmed window)": 2,
+    "publisher_deposited_online_date_via_crossref (Crossref 'created' deposit timestamp; JATS/PubMed lack an explicit electronic ArticleDate. Corroborated by Crossref's own month-only 'published' field [2026,8] and Europe PMC firstPublicationDate 2026-08-01, both agreeing on August 2026, well inside the confirmed window)": 3,
+    "Published date on first page of journal PDF": 1,
+    "publisher Published date, not later Corrected and typeset date": 1
+  },
+  "limitations": "Count matching certifies retrieval of database queries, not complete publisher coverage. Credit checks certify arithmetic and mapping coverage, not independent correctness of every institutional identity or parser output."
+}

@@ -1,0 +1,45 @@
+# Local credentials (never commit an API key)
+.env
+.env.*
+!.env.example
+
+# Python and local tooling
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+.venv/
+venv/
+node_modules/
+
+# Editor and OS temporary files
+.DS_Store
+*.swp
+*.swo
+*~
+*.tmp
+*.log
+
+# Publish only the compact final dataset and mapping/provenance files below.
+# The article extractions, screening ledgers, audits, and downloaded API/page
+# caches stay local; they are not needed to view or rebuild the published site.
+/data/*
+!/data/arwu_2026_top1000.csv
+!/data/arwu_2026_source.json
+!/data/journal_impact_factors.csv
+!/data/study_config.json
+!/data/papers_reviewed_PROVISIONAL.csv
+!/data/paper_credits_PROVISIONAL.csv
+!/data/top100_PROVISIONAL.csv
+!/data/top100_paper_contributions_PROVISIONAL.csv
+!/data/university_scores_all1000_PROVISIONAL.csv
+!/data/provisional_ranking_status.json
+!/data/validation_report.json
+!/data/affiliation_overrides.json
+!/data/institutions_outside_pool.json
+!/data/institution_aliases.json
+!/data/reviewed_joint_affiliation_rules.json
+!/data/institution_normalization_evidence_20260926.json

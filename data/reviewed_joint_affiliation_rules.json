@@ -1,0 +1,29 @@
+{
+  "hongshan_explicit_partners": {
+    "required_substring": "Hubei Hongshan Laboratory",
+    "only_for_dois": [
+      "10.1016/j.cell.2026.07.005",
+      "10.1016/j.cell.2026.08.038",
+      "10.1016/j.cub.2025.10.037",
+      "10.1038/s41467-025-64842-9",
+      "10.1038/s41467-025-66337-z",
+      "10.1038/s41467-026-68463-8",
+      "10.1038/s41467-026-71527-4",
+      "10.1038/s41467-026-73654-4",
+      "10.1038/s41467-026-75953-2",
+      "10.1073/pnas.2505641122",
+      "10.1073/pnas.2523784123",
+      "10.1126/sciadv.adt4817"
+    ],
+    "required_ids": ["outside:hubei-hongshan-laboratory"],
+    "allowed_ids": [
+      "outside:hubei-hongshan-laboratory",
+      "huazhong-agricultural-university",
+      "wuhan-university",
+      "shihezi-university",
+      "outside:max-planck-institute-for-plant-breeding-research"
+    ],
+    "reason": "The exact scoped affiliation strings name Hongshan Laboratory and the matched university or Max Planck parent(s). Internal key laboratories, departments and research centres do not receive separate shares; all named parent institutions do.",
+    "source_url": "https://en.hzau.edu.cn/info/1013/2578.htm"
+  }
+}

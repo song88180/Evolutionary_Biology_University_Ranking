@@ -1,0 +1,13 @@
+{
+  "publication_start": "2025-09-24",
+  "publication_end": "2026-09-24",
+  "date_bounds": "inclusive",
+  "date_basis": "first official online journal publication, including published Advance Access accepted manuscripts; exclude independent preprints; publisher date determines eligibility",
+  "date_convention_note": "User confirmed on 2026-09-24: count first official online publication, including Advance Access. An official journal DOI is counted once, not again after typesetting.",
+  "jif_data_year": 2025,
+  "arwu_edition": 2026,
+  "denominator": "all distinct corresponding-author institutions, including outside ARWU top 1000",
+  "ranking_pool": "ARWU 2026 top 1000",
+  "correspondence_fallback": "User authorized 2026-09-24: explicitly marked OpenAlex corresponding authors and linked affiliations may be used for a clearly flagged provisional ranking when publisher/repository correspondence remains inaccessible. Do not infer correspondence or override accessible primary evidence.",
+  "scope_confirmed_by_user": "2026-09-24"
+}
