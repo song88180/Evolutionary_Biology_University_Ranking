@@ -6,8 +6,10 @@ used if Google Fonts is unavailable).
 
 The ranking becomes a card list on narrow phone screens, so no sideways table
 scrolling is required. The header's 中文 / English button switches the site
-interface and methodology; official university names and paper titles remain
-in their original language.
+interface and methodology. All 100 universities have Simplified Chinese names
+from `university_names_zh.json`, with the English names retained below them.
+Journal names and paper titles stay in their original language. The Journal
+weights section is ordered from highest to lowest 2025 impact factor.
 
 The Results area has separate university and included-paper tabs. The latter
 lists all 2,378 papers, with title/author/DOI search, a journal filter and a

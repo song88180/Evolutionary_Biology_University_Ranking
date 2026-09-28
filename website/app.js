@@ -24,29 +24,22 @@
   const formatScore = number => new Intl.NumberFormat('en-US', {minimumFractionDigits: 2, maximumFractionDigits: 2}).format(number);
   const normalize = value => value.normalize('NFKD').replace(/[\u0300-\u036f]/g, '').toLowerCase();
   const chinese = [
-    ['.brand-label', '进化生物学<br>大学排名'],
+    ['.brand-label', '进化生物学大学排名'],
     ['.site-header nav a:nth-child(1)', '排名'],
     ['.site-header nav a:nth-child(2)', '论文'],
     ['.site-header nav a:nth-child(3)', '排名规则'],
     ['.site-header nav a:nth-child(4)', '数据'],
-    ['.hero .eyebrow', '<span class="live-dot"></span> 最终排名 · 2026 年版'],
-    ['#hero-title', '进化研究，<br><em>世界何处领先？</em>'],
-    ['.hero-intro', '逐篇论文评估全球 ARWU 前 1,000 所大学的进化生物学研究。'],
-    ['.hero-actions .button', '查看前 100 名 <span aria-hidden="true">↗</span>'],
-    ['.hero-actions .text-link', '了解评分方法 <span aria-hidden="true">↓</span>'],
-    ['.date-line', '论文发表时间 <strong>2025 年 9 月 24 日—2026 年 9 月 24 日</strong>'],
-    ['.orbit-center span', '所大学'],
     ['.facts>div:nth-child(1) .fact-label', '上榜大学'],
     ['.facts>div:nth-child(2) .fact-label', '符合条件的论文'],
     ['.facts>div:nth-child(3) .fact-label', '研究期刊'],
-    ['.facts>div:nth-child(4) .fact-number', '1 年'],
+    ['.facts>div:nth-child(4) .fact-number', '24 Sep 2025 — 24 Sep 2026'],
     ['.facts>div:nth-child(4) .fact-label', '发表时间范围'],
-    ['.ranking-section .eyebrow', '排名结果'],
-    ['#ranking-title', '查看研究结果'],
-    ['.ranking-section .section-intro', '浏览前 100 所大学，或查看纳入分析的全部 2,378 篇进化生物学论文。'],
+    ['#ranking-title', '进化生物学领域全球大学前 100 名'],
+    ['.ranking-section .section-intro', '逐篇论文评估全球 ARWU 前 1,000 所大学的进化生物学研究。'],
     ['#universities-tab', '大学排名 <span>100</span>'],
     ['#papers-tab', '纳入论文 <span>2,378</span>'],
-    ['#universities-panel .panel-intro p', '按期刊影响因子分摊后的总分排序。点击大学可查看每篇计分论文。'],
+    ['#universities-panel .panel-rule', '得分为各篇论文的 2025 年期刊影响因子之和，每篇论文由所有不同的通讯作者所属机构平均分摊。页面显示两位小数；实际排名使用未四舍五入的总分。点击大学可查看计分论文。'],
+    ['#universities-panel .panel-credit-types', '<strong>全额 / 分摊：</strong>“全额”指该大学获得论文的全部影响因子分值；“分摊”指与其他通讯作者所属机构分享该分值。'],
     ['#papers .panel-intro p', '最终数据集中的每篇合格论文，包括未给前 100 名大学计分的论文。'],
     ['.ranking-section .download-link', '下载排名 CSV <span aria-hidden="true">↘</span>'],
     ['#papers .download-link', '下载全部论文 CSV <span aria-hidden="true">↘</span>'],
@@ -56,7 +49,6 @@
     ['.ranking-section th:nth-child(3)', '得分'],
     ['.ranking-section th:nth-child(4)', '论文数'],
     ['.ranking-section th:nth-child(5)', '全额 / 分摊'],
-    ['.table-note', '每篇论文的 2025 年期刊影响因子由所有不同的通讯作者所属机构平均分摊。页面显示两位小数；实际排名使用未四舍五入的分数。'],
     ['.method-lead .eyebrow', '排名方法'],
     ['#method-title', '逐篇论文，<br>统一规则。'],
     ['.method-lead>p:not(.eyebrow)', '仅纳入以进化为主要科学问题或结论的原创研究。论文须在指定的一年内首次在线发表于 11 种期刊之一。'],
@@ -70,26 +62,15 @@
     ['.journal-section .eyebrow', '期刊范围'],
     ['#journals-title', '期刊权重'],
     ['.journal-section .section-intro', '同一期刊的每篇合格论文使用相同的 2025 年影响因子。'],
-    ['.source-note', '本网站展示项目负责人确定的最终排名。其中 2,378 篇论文有 347 篇使用 OpenAlex 明确标记的通讯作者资料，其余使用出版商或文献库资料。可下载上方的论文计分明细独立核查。大学和论文的正式名称保留原文。'],
+    ['.source-note', '本网站展示项目负责人确定的最终排名。其中 2,378 篇论文有 347 篇使用 OpenAlex 明确标记的通讯作者资料，其余使用出版商或文献库资料。可下载上方的论文计分明细独立核查。大学中文名称为便于阅读的译名，英文原名一并保留；期刊名称和论文标题保持原文。'],
     ['footer p', '进化生物学大学排名 · 2026'],
-    ['footer a', '返回顶部 ↑'],
+    ['footer .back-to-top', '返回顶部 ↑'],
   ];
   const staticTranslations = chinese.map(([selector, zh]) => {
     const element = document.querySelector(selector);
     if (!element) throw new Error(`Missing translation target: ${selector}`);
     return {element, en: element.innerHTML, zh};
   });
-  const journalChinese = {
-    'Nature': '《自然》', 'Science': '《科学》', 'Cell': '《细胞》',
-    'Nature Ecology & Evolution': '《自然·生态与进化》',
-    'Nature Genetics': '《自然·遗传学》',
-    'Nature Human Behaviour': '《自然·人类行为》',
-    'Proceedings of the National Academy of Sciences': '《美国国家科学院院刊》',
-    'Science Advances': '《科学进展》',
-    'Nature Communications': '《自然·通讯》',
-    'Current Biology': '《当代生物学》',
-    'Molecular Biology and Evolution': '《分子生物学与进化》',
-  };
   let language = 'en';
   let selected = null;
   let visiblePaperCount = 30;
@@ -105,6 +86,7 @@
     languageToggle.textContent = label('中文', 'English');
     languageToggle.setAttribute('aria-label', label('Switch to Chinese', '切换到英语'));
     document.querySelector('.brand').setAttribute('aria-label', label('Evolutionary Biology Ranking home', '进化生物学排名首页'));
+    document.querySelectorAll('.github-link').forEach(link => link.setAttribute('aria-label', label('View project on GitHub', '在 GitHub 查看项目')));
     document.querySelector('.site-header nav').setAttribute('aria-label', label('Main navigation', '主导航'));
     document.querySelector('.facts').setAttribute('aria-label', label('Ranking at a glance', '排名概览'));
     document.querySelector('#search').placeholder = label('Search universities…', '搜索大学…');
@@ -134,16 +116,22 @@
 
   function renderRanking() {
     const term = normalize(search.value.trim());
-    const filtered = data.ranking.filter(item => normalize(item.name).includes(term) || String(item.rank) === term);
+    const filtered = data.ranking.filter(item => normalize(`${item.name} ${item.nameZh}`).includes(term) || String(item.rank) === term);
     body.replaceChildren();
     const fragment = document.createDocumentFragment();
     for (const item of filtered) {
       const row = document.createElement('tr');
       row.tabIndex = 0;
-      row.setAttribute('aria-label', label(`Rank ${item.rank}, ${item.name}, ${formatScore(item.score)} points. Show papers.`, `第 ${item.rank} 名，${item.name}，${formatScore(item.score)} 分。查看论文。`));
+      row.setAttribute('aria-label', label(`Rank ${item.rank}, ${item.name}, ${formatScore(item.score)} points. Show papers.`, `第 ${item.rank} 名，${item.nameZh}（${item.name}），${formatScore(item.score)} 分。查看论文。`));
       const rank = cell(row, String(item.rank).padStart(2, '0'), `rank-cell${item.rank <= 3 ? ' rank-top' : ''}`);
       rank.setAttribute('data-label', label('Rank', '名次'));
-      cell(row, item.name, 'university-name');
+      const name = cell(row, language === 'zh' ? item.nameZh : item.name, 'university-name');
+      if (language === 'zh') {
+        const original = document.createElement('small');
+        original.className = 'subline';
+        original.textContent = item.name;
+        name.append(original);
+      }
       cell(row, formatScore(item.score), 'numeric score').setAttribute('data-label', label('Score', '得分'));
       cell(row, String(item.papers), 'numeric').setAttribute('data-label', label('Papers', '论文数'));
       cell(row, `${item.full} / ${item.fractional}`, 'numeric breakdown').setAttribute('data-label', label('Full / Fractional', '全额 / 分摊'));
@@ -171,7 +159,7 @@
     if (!selected) return;
     const term = normalize(paperSearch.value.trim());
     const matches = paperData.contributions[selected.id].filter(paper =>
-      normalize(`${paper.title} ${paper.journal} ${journalChinese[paper.journal] || ''} ${paper.doi}`).includes(term));
+      normalize(`${paper.title} ${paper.journal} ${paper.doi}`).includes(term));
     paperList.replaceChildren();
     const fragment = document.createDocumentFragment();
     for (const paper of matches) {
@@ -185,7 +173,7 @@
       link.textContent = paper.title;
       const meta = document.createElement('p');
       meta.className = 'paper-meta';
-      meta.textContent = `${language === 'zh' ? journalChinese[paper.journal] || paper.journal : paper.journal} · ${paper.date} · ${paper.doi} · ${paper.source === 'OpenAlex' ? 'OpenAlex' : label('Publisher / repository', '出版商／文献库')}`;
+      meta.textContent = `${paper.journal} · ${paper.date} · ${paper.doi} · ${paper.source === 'OpenAlex' ? 'OpenAlex' : label('Publisher / repository', '出版商／文献库')}`;
       left.append(link, meta);
       const points = document.createElement('div');
       points.className = 'paper-points';
@@ -209,7 +197,10 @@
   function renderDialogHeading() {
     const item = selected;
     document.getElementById('dialog-rank').textContent = label(`Rank #${item.rank} · Paper contributions`, `第 ${item.rank} 名 · 计分论文`);
-    document.getElementById('dialog-title').textContent = item.name;
+    document.getElementById('dialog-title').textContent = language === 'zh' ? item.nameZh : item.name;
+    const original = document.getElementById('dialog-original-name');
+    original.textContent = language === 'zh' ? item.name : '';
+    original.hidden = language !== 'zh';
     document.getElementById('dialog-summary').textContent = label(`${formatScore(item.score)} points from ${item.papers} papers · ${item.full} full-credit / ${item.fractional} fractional-credit`, `${item.papers} 篇论文共 ${formatScore(item.score)} 分 · ${item.full} 篇全额 / ${item.fractional} 篇分摊`);
   }
 
@@ -228,7 +219,7 @@
       const card = document.createElement('div');
       card.className = 'journal-card';
       const name = document.createElement('span');
-      name.textContent = language === 'zh' ? journalChinese[journal.name] || journal.name : journal.name;
+      name.textContent = journal.name;
       const weight = document.createElement('strong');
       weight.textContent = journal.impactFactor.toFixed(1);
       card.append(name, weight);
@@ -246,7 +237,7 @@
     for (const journal of data.journals) {
       const option = document.createElement('option');
       option.value = journal.name;
-      option.textContent = language === 'zh' ? journalChinese[journal.name] || journal.name : journal.name;
+      option.textContent = journal.name;
       journalFilter.append(option);
     }
     journalFilter.value = current;
@@ -257,7 +248,7 @@
     const journal = journalFilter.value;
     return paperData.included.filter(paper => {
       if (journal && paper.journal !== journal) return false;
-      const searchable = `${paper.title} ${paper.authors} ${paper.doi} ${paper.journal} ${journalChinese[paper.journal] || ''}`;
+      const searchable = `${paper.title} ${paper.authors} ${paper.doi} ${paper.journal}`;
       return normalize(searchable).includes(term);
     });
   }
@@ -272,7 +263,7 @@
       const topline = document.createElement('div');
       topline.className = 'record-topline';
       const journal = document.createElement('span');
-      journal.textContent = language === 'zh' ? journalChinese[paper.journal] || paper.journal : paper.journal;
+      journal.textContent = paper.journal;
       const date = document.createElement('time');
       date.dateTime = paper.date;
       date.textContent = paper.date;
